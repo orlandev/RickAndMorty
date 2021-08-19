@@ -15,7 +15,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.toLowerCase
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
@@ -36,7 +40,7 @@ fun RickListRow(
         modifier = Modifier.height(rowHeightDp).fillMaxWidth().padding(standarPadding),
         shape = RoundedCornerShape(10.dp)
     ) {
-        Row(modifier = Modifier.fillMaxSize().padding(standarPadding)) {
+        Row(modifier = Modifier.fillMaxSize().padding(standarPadding),verticalAlignment = Alignment.CenterVertically) {
             Image(
                 modifier = Modifier
                     .size(62.dp)
@@ -57,10 +61,10 @@ fun RickListRow(
                 modifier = Modifier.width(200.dp)
                     .fillMaxHeight()
                     .padding(standarPadding)) {
-                Text(
+                RickText(
                     text = characterData.name,
-                    fontSize = 18.sp,
-                    fontFamily = FontFamily.Default
+                    textSize = 18.sp,
+                    fontWeight = FontWeight.Bold
                 )
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     if (characterData.status == "Alive")
@@ -68,21 +72,20 @@ fun RickListRow(
                     else
                         Box(modifier = Modifier.clip(CircleShape).size(4.dp).background(aDeadRed))
                     Spacer(modifier = Modifier.padding(4.dp))
-                    Text(
+                    RickText(
                         text = characterData.status,
-                        fontSize = 14.sp,
-                        fontFamily = FontFamily.Default
+                        textSize = 14.sp,
                     )
                 }
             }
             Spacer(modifier = Modifier.padding(standarPadding))
-            Text(
+            RickText(
                 text = characterData.gender,
-                fontSize = 14.sp,
-                fontFamily = FontFamily.Default
+                textSize = 14.sp,
             )
         }
 
 
     }
 }
+
