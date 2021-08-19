@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,6 +30,7 @@ import com.ondev.rickandmorty.ui.theme.aDeadRed
 import com.ondev.rickandmorty.ui.theme.aLiveGreen
 import com.ondev.rickandmorty.ui.theme.surface
 
+@ExperimentalMaterialApi
 @Composable
 fun RickListRow(
     characterData: Character,
@@ -38,9 +40,11 @@ fun RickListRow(
     Card(
         backgroundColor = surface,
         modifier = Modifier.height(rowHeightDp).fillMaxWidth().padding(standarPadding),
-        shape = RoundedCornerShape(10.dp)
+        shape = RoundedCornerShape(10.dp),
+        onClick = {}
     ) {
-        Row(modifier = Modifier.fillMaxSize().padding(standarPadding),verticalAlignment = Alignment.CenterVertically) {
+        Row(modifier = Modifier.fillMaxSize().padding(standarPadding),
+            verticalAlignment = Alignment.CenterVertically) {
             Image(
                 modifier = Modifier
                     .size(62.dp)
