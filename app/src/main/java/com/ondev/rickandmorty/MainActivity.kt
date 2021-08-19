@@ -6,14 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.lifecycle.LiveData
 import com.ondev.rickandmorty.composables.RickAndMorty
-import com.ondev.rickandmorty.composables.RickAndMortyCharactersList
-import com.ondev.rickandmorty.composables.ShowLoading
-import com.ondev.rickandmorty.data.Character
 import com.ondev.rickandmorty.ui.theme.RickAndMortyTheme
 import com.ondev.rickandmorty.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,10 +32,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
-
 
 
 

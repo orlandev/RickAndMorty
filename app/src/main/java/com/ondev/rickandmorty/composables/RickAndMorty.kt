@@ -7,10 +7,12 @@ import androidx.lifecycle.LiveData
 import com.ondev.rickandmorty.data.Character
 
 @Composable
-fun RickAndMorty(characterLiveData: LiveData<List<Character>>) {
-    val characterData by characterLiveData.observeAsState(initial = emptyList())
+fun RickAndMorty(charactersList: LiveData<List<Character>>) {
+
+    val characterData by charactersList.observeAsState(initial = emptyList())
+
     if (characterData.isEmpty()) {
-        ShowLoading()
+        SplashScreen()
     } else {
         RickAndMortyCharactersList(characterData)
     }
