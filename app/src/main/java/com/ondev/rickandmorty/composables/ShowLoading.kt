@@ -45,7 +45,7 @@ fun SplashScreen() {
         ) {
             Image(
                 painter = painterResource(com.ondev.rickandmorty.R.drawable.rick_icon_loader),
-                contentDescription = "Trinidad Logo",
+                contentDescription = "RickAndMorty Logo",
                 modifier = Modifier.scale(scale = scale.value).align(Alignment.CenterHorizontally),
             )
             Spacer(modifier = Modifier.padding(4.dp))
