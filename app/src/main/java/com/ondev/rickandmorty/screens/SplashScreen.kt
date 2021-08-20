@@ -1,4 +1,4 @@
-package com.ondev.rickandmorty.composables
+package com.ondev.rickandmorty.screens
 
 import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.Animatable
